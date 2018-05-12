@@ -13,32 +13,31 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="276.0"
-         prefWidth="462.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.121"
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="336.0"
+         prefWidth="452.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.121"
          xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <tabs>
         <Tab text="Show phone book">
             <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                     <children>
-                        <TableView layoutX="127.0" prefHeight="248.0" prefWidth="335.0">
+                        <TableView fx:id="table" layoutX="148.0" prefHeight="309.0" prefWidth="304.0">
                             <columns>
-                                <TableColumn prefWidth="75.0" text="ID"/>
-                                <TableColumn prefWidth="107.0" text="Phone nr"/>
-                                <TableColumn prefWidth="72.0" text="Name"/>
-                                <TableColumn text="Surname"/>
+                                <TableColumn fx:id="colNumber" prefWidth="107.0" text="Phone number"/>
+                                <TableColumn fx:id="colName" prefWidth="112.0" text="Name"/>
+                                <TableColumn fx:id="colSurname" prefWidth="91.0" text="Surname"/>
                             </columns>
                         </TableView>
-                        <ScrollPane layoutX="-1.0" prefHeight="247.0" prefWidth="126.0">
+                        <ScrollPane layoutX="-1.0" prefHeight="304.0" prefWidth="148.0">
                             <content>
-                                <ListView fx:id="listView" prefHeight="235.0" prefWidth="122.0"/>
+                                <ListView fx:id="listView" prefHeight="301.0" prefWidth="144.0"/>
                             </content>
                         </ScrollPane>
                     </children>
                 </AnchorPane>
             </content>
         </Tab>
-        <Tab text=" Add new record">
+        <Tab text="Add to book">
             <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                     <children>
@@ -58,9 +57,8 @@
                                 <ComboBox fx:id="comboBox" prefWidth="150.0"/>
                             </children>
                         </VBox>
-                        <Button fx:id="addButton" onAction="#addNewNumber" layoutX="365.0" layoutY="102.0"
-                                mnemonicParsing="false" prefHeight="26.0"
-                                prefWidth="70.0" text="Add!"/>
+                        <Button fx:id="addButton" layoutX="365.0" layoutY="102.0" mnemonicParsing="false"
+                                onAction="#addNewNumber" prefHeight="26.0" prefWidth="70.0" text="Add!"/>
                     </children>
                 </AnchorPane>
             </content>

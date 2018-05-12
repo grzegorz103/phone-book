@@ -1,17 +1,16 @@
 package sample;
 
-import javax.xml.transform.Result;
 import java.io.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Database {
+class Database {
 
     private static final String DB_NAME = "numbers.db";
     private static Connection conn = null;
 
-    public static void connect() {
+    static void connect() {
         if (conn == null) {
             String url = "jdbc:sqlite:" + DB_NAME;
             try {
@@ -22,7 +21,7 @@ public class Database {
         }
     }
 
-    public static void insert(Number number) {
+    static void insert(Number number) {
 
         String sql = "INSERT INTO numbers(number) VALUES (?)";
 
@@ -47,7 +46,7 @@ public class Database {
         }
     }
 
-    public static void select() {
+    static void select() {
         String query = "SELECT number FROM numbers";
         try (Statement stmt = conn.createStatement()) {
             ResultSet rs = stmt.executeQuery(query);

@@ -7,10 +7,10 @@ public class Number implements Serializable {
     private int number;
     private String name, surname, voide;
 
-    public Number(int number, String name, String surname, String voide){
+    public Number(int number, String name, String surname, String voide) {
         this.number = number;
         this.name = name;
-        this.surname =surname;
+        this.surname = surname;
         this.voide = voide;
     }
 
