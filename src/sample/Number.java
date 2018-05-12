@@ -1,51 +1,32 @@
 package sample;
 
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import java.io.Serializable;
 
-public class Number {
+public class Number implements Serializable {
 
-    private IntegerProperty number;
-    private StringProperty name, surname, voide;
+    private int number;
+    private String name, surname, voide;
 
     public Number(int number, String name, String surname, String voide){
-        this.number = new SimpleIntegerProperty(number);
-        this.name = new SimpleStringProperty(name);
-        this.surname = new SimpleStringProperty(surname);
-        this.voide = new SimpleStringProperty(voide);
+        this.number = number;
+        this.name = name;
+        this.surname =surname;
+        this.voide = voide;
+    }
+
+    public int getNumber() {
+        return number;
     }
 
     public String getName() {
-        return name.get();
-    }
-
-    public StringProperty nameProperty() {
         return name;
     }
 
     public String getSurname() {
-        return surname.get();
-    }
-
-    public StringProperty surnameProperty() {
         return surname;
     }
 
     public String getVoide() {
-        return voide.get();
-    }
-
-    public StringProperty voideProperty() {
         return voide;
-    }
-
-    public int getNumber() {
-        return number.get();
-    }
-
-    public IntegerProperty numberProperty() {
-        return number;
     }
 }
